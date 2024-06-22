@@ -38,7 +38,7 @@ int main(int argc, char * argv[]) {
     string servAddress = argv[1]; // First arg: server address
     unsigned short servPort = Socket::resolveService(argv[2], "udp");
 
-    try {
+
         UDPSocket sock;
         int jpegqual =  ENCODE_QUALITY; // Compression Parameter
 
@@ -82,10 +82,6 @@ int main(int argc, char * argv[]) {
         }
         // Destructor closes the socket
 
-    } catch (SocketException & e) {
-        cerr << e.what() << endl;
-        exit(1);
-    }
 
     return 0;
 }
